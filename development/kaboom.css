@@ -1,0 +1,172 @@
+/*\
+Copyright (c) 2015 Michael Longhurst
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+\*/
+
+/* Modal Base CSS */
+.kaboom-overlay {
+    position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9990;
+	opacity: 0;
+
+    -webkit-transition: 1ms opacity ease;
+       -moz-transition: 1ms opacity ease;
+        -ms-transition: 1ms opacity ease;
+         -o-transition: 1ms opacity ease;
+            transition: 1ms opacity ease;
+
+    background: rgba(0, 0, 0, 0.24);
+}
+
+.kaboom-modal {
+    position: absolute;
+    z-index: 9991;
+    top: 50%;
+    left: 50%;
+
+    opacity: 0;
+
+    width: 460px;
+	min-height: 280px;
+    padding: 24px 20px;
+	border: 1px solid #000000;
+
+    -webkit-transition: 1ms opacity ease;
+       -moz-transition: 1ms opacity ease;
+        -ms-transition: 1ms opacity ease;
+         -o-transition: 1ms opacity ease;
+            transition: 1ms opacity ease;
+
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+    background: #fff;
+}
+
+.kaboom-modal.kaboom-open.kaboom-anchored {
+    top: 20px;
+
+    -webkit-transform: translate(-50%, 0);
+       -moz-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+         -o-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+}
+
+.kaboom-modal.kaboom-open,
+.kaboom-overlay.kaboom-open {
+    opacity: 1;
+
+}
+
+/* Close Button */
+.kaboom-close {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 12px;
+
+    position: absolute;
+    top: 6px;
+    right: 6px;
+
+    padding: 5px 7px 7px;
+
+    cursor: pointer;
+
+    color: #FFFFFF;
+    border: 0;
+    outline: none;
+    background: #111111;
+}
+
+.kaboom-close:hover {
+    background: #333333;
+}
+
+/* Default Animation */
+
+.kaboom-overlay.fade-and-drop {
+    display: block;
+
+    opacity: 0;
+}
+
+.kaboom-modal.fade-and-drop {
+    top: -300%;
+
+    opacity: 1;
+
+    display: block;
+}
+
+.kaboom-modal.fade-and-drop.kaboom-open {
+    top: 50%;
+
+    -webkit-transition: 400ms top 400ms ease;
+       -moz-transition: 400ms top 400ms ease;
+        -ms-transition: 400ms top 400ms ease;
+         -o-transition: 400ms top 400ms ease;
+            transition: 400ms top 400ms ease;
+}
+
+.kaboom-modal.fade-and-drop.kaboom-open.kaboom-anchored {
+
+    -webkit-transition: 400ms top 400ms ease;
+       -moz-transition: 400ms top 400ms ease;
+        -ms-transition: 400ms top 400ms ease;
+         -o-transition: 400ms top 400ms ease;
+            transition: 400ms top 400ms ease;
+}
+
+.kaboom-overlay.fade-and-drop.kaboom-open {
+    top: 0;
+
+    -webkit-transition: 400ms opacity ease;
+       -moz-transition: 400ms opacity ease;
+        -ms-transition: 400ms opacity ease;
+         -o-transition: 400ms opacity ease;
+            transition: 400ms opacity ease;
+
+    opacity: 1;
+}
+
+.kaboom-modal.fade-and-drop {
+    -webkit-transition: 400ms top ease;
+       -moz-transition: 400ms top ease;
+        -ms-transition: 400ms top ease;
+         -o-transition: 400ms top ease;
+            transition: 400ms top ease;
+}
+
+.kaboom-overlay.fade-and-drop {
+    -webkit-transition: 400ms opacity 400ms ease;
+       -moz-transition: 400ms opacity 400ms ease;
+        -ms-transition: 400ms opacity 400ms ease;
+         -o-transition: 400ms opacity 400ms ease;
+            transition: 400ms opacity 400ms ease;
+}
